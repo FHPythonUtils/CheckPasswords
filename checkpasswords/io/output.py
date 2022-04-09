@@ -152,11 +152,11 @@ def markdown(credentials: list[Credentials]) -> str:
 	toTB = lambda z: "\n".join([f'|{"|".join([str(y) for y in x])}|' for x in z[1:]])
 
 	strBuf.append("\nSummary\n|Issue|No. Instances|\n|:--|:--|")
-	strBuf.append(f"|duplicate_passwords|{count((duplicatePasswordsTable))}")
-	strBuf.append(f"|weak_passwords|{count((weakPasswordsTable))}")
-	strBuf.append(f"|http_sites|{count((httpSitesTable))}")
-	strBuf.append(f"|enable_2fa|{count((enable2faTable))}")
-	strBuf.append(f"|emails|{count((emailsTable))}")
+	strBuf.append(f"|Duplicate Passwords|{count((duplicatePasswordsTable))}")
+	strBuf.append(f"|Weak Passwords|{count((weakPasswordsTable))}")
+	strBuf.append(f"|HTTP Sites|{count((httpSitesTable))}")
+	strBuf.append(f"|Enable 2FA|{count((enable2faTable))}")
+	strBuf.append(f"|Emails|{count((emailsTable))}")
 
 	strBuf.append("\nDuplicate Passwords\n|Name|Username|Password|\n|:--|:--|:--|")
 	strBuf.append(toTB(duplicatePasswordsTable))

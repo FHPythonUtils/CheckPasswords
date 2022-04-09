@@ -50,7 +50,7 @@ def isHttp(urlstr: str) -> bool:
 def entropyLen(string: str):
 	"""Calculates the Shannon entropy * length of a string"""
 	prob = [string.count(c) / len(string) for c in set(string)]
-	entropy = -sum([p * math.log(p) / math.log(2.0) for p in prob])
+	entropy = -sum(p * math.log(p) / math.log(2.0) for p in prob)
 	return entropy * len(string)
 
 
