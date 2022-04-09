@@ -1,0 +1,3 @@
+pass-import<4,>=3.2
+rich<13,>=12.2.0
+zxcvbn-python<5,>=4.4.24
