@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/github/license/FHPythonUtils/CheckPasswords.svg?style=for-the-badge)](/LICENSE.md)
 [![Commit activity](https://img.shields.io/github/commit-activity/m/FHPythonUtils/CheckPasswords.svg?style=for-the-badge)](../../commits/master)
 [![Last commit](https://img.shields.io/github/last-commit/FHPythonUtils/CheckPasswords.svg?style=for-the-badge)](../../commits/master)
-[![PyPI Downloads](https://img.shields.io/pypi/dm/CheckPasswords.svg?style=for-the-badge)](https://pypistats.org/packages/CheckPasswords)
+[![PyPI Downloads](https://img.shields.io/pypi/dm/checkpasswords.svg?style=for-the-badge)](https://pypistats.org/packages/CheckPasswords)
 [![PyPI Total Downloads](https://img.shields.io/badge/dynamic/json?style=for-the-badge&label=total%20downloads&query=%24.total_downloads&url=https%3A%2F%2Fapi.pepy.tech%2Fapi%2Fprojects%2Fcheckpasswords)](https://pepy.tech/project/CheckPasswords)
 [![PyPI Version](https://img.shields.io/pypi/v/CheckPasswords.svg?style=for-the-badge)](https://pypi.org/project/CheckPasswords)
 
