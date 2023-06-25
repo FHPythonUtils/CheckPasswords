@@ -1,25 +1,22 @@
 # Credentials
 
+[Checkpasswords Index](../README.md#checkpasswords-index) /
+[Checkpasswords](./index.md#checkpasswords) /
+Credentials
+
 > Auto-generated documentation for [checkpasswords.credentials](../../../checkpasswords/credentials.py) module.
 
-Credentials class and associated methods
-
-- [Checkpasswords](../README.md#checkpasswords-index) / [Modules](../MODULES.md#checkpasswords-modules) / [Checkpasswords](index.md#checkpasswords) / Credentials
-    - [Credentials](#credentials)
-        - [Credentials().\_\_post\_init\_\_](#credentials__post_init__)
-    - [applyPasswordDuplicate](#applypasswordduplicate)
-    - [emails](#emails)
-    - [generateTables](#generatetables)
-    - [orderCredentials](#ordercredentials)
+- [Credentials](#credentials)
+  - [Credentials](#credentials-1)
+    - [Credentials().__post_init__](#credentials()__post_init__)
+  - [applyPasswordDuplicate](#applypasswordduplicate)
+  - [emails](#emails)
+  - [generateTables](#generatetables)
+  - [orderCredentials](#ordercredentials)
 
 ## Credentials
 
-[[find in source code]](../../../checkpasswords/credentials.py#L18)
-
-```python
-dataclass
-class Credentials():
-```
+[Show source in credentials.py:18](../../../checkpasswords/credentials.py#L18)
 
 Credentials storing raw data from IO and inferred data such as:
 - zxcvbnScore
@@ -35,23 +32,31 @@ Used to:
 - identify http sites
 - list available 2fa options using data from https://2fa.directory/
 
-### Credentials().\_\_post\_init\_\_
-
-[[find in source code]](../../../checkpasswords/credentials.py#L47)
+#### Signature
 
 ```python
-def __post_init__():
+class Credentials:
+    ...
 ```
+
+### Credentials().__post_init__
+
+[Show source in credentials.py:47](../../../checkpasswords/credentials.py#L47)
 
 Populate/ update various attributes using auxiliary functions
 
-## applyPasswordDuplicate
-
-[[find in source code]](../../../checkpasswords/credentials.py#L60)
+#### Signature
 
 ```python
-def applyPasswordDuplicate(credentials: list[Credentials]):
+def __post_init__(self):
+    ...
 ```
+
+
+
+## applyPasswordDuplicate
+
+[Show source in credentials.py:60](../../../checkpasswords/credentials.py#L60)
 
 Apply duplicate password flag to each credentials
 
@@ -59,17 +64,22 @@ Apply duplicate password flag to each credentials
 
 - `credentials` *list[Credentials]* - list of all credentials
 
+#### Signature
+
+```python
+def applyPasswordDuplicate(credentials: list[Credentials]):
+    ...
+```
+
 #### See also
 
 - [Credentials](#credentials)
 
+
+
 ## emails
 
-[[find in source code]](../../../checkpasswords/credentials.py#L73)
-
-```python
-def emails(credentials: list[Credentials]) -> set[str]:
-```
+[Show source in credentials.py:73](../../../checkpasswords/credentials.py#L73)
 
 Return a set of unique emails from the list of credentials
 
@@ -81,19 +91,22 @@ Return a set of unique emails from the list of credentials
 
 - `set[str]` - set of unique emails
 
+#### Signature
+
+```python
+def emails(credentials: list[Credentials]) -> set[str]:
+    ...
+```
+
 #### See also
 
 - [Credentials](#credentials)
 
+
+
 ## generateTables
 
-[[find in source code]](../../../checkpasswords/credentials.py#L98)
-
-```python
-def generateTables(
-    credentials: list[Credentials],
-) -> tuple[list[tuple[str, ...]], ...]:
-```
+[Show source in credentials.py:98](../../../checkpasswords/credentials.py#L98)
 
 generateTables
 
@@ -102,17 +115,22 @@ generateTables
 - `credentials` *list[Credentials]* - list of credentials parsed from some input file.
 Such as a bitwarden export to CSV
 
+#### Signature
+
+```python
+def generateTables(credentials: list[Credentials]) -> tuple[list[tuple[str, ...]], ...]:
+    ...
+```
+
 #### See also
 
 - [Credentials](#credentials)
 
+
+
 ## orderCredentials
 
-[[find in source code]](../../../checkpasswords/credentials.py#L85)
-
-```python
-def orderCredentials(credentials: list[Credentials]) -> list[Credentials]:
-```
+[Show source in credentials.py:85](../../../checkpasswords/credentials.py#L85)
 
 Order credentials by password crack time
 
@@ -125,6 +143,15 @@ Such as a bitwarden export to CSV
 
 - `list[Credentials]` - sorted credentials
 
+#### Signature
+
+```python
+def orderCredentials(credentials: list[Credentials]) -> list[Credentials]:
+    ...
+```
+
 #### See also
 
 - [Credentials](#credentials)
+
+

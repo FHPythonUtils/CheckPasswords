@@ -1,10 +1,9 @@
-# Checkpasswords Modules
+# Checkpasswords Index
 
-> Auto-generated documentation modules index.
+> Auto-generated documentation index.
 
-Full list of [Checkpasswords](README.md#checkpasswords-index) project modules.
+A full list of `Checkpasswords` project modules.
 
-- [Checkpasswords Index](README.md#checkpasswords-index)
 - [Checkpasswords](checkpasswords/index.md#checkpasswords)
     - [Module](checkpasswords/module.md#module)
     - [Auxiliary](checkpasswords/auxiliary.md#auxiliary)

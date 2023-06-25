@@ -1,41 +1,24 @@
 # Output
 
-> Auto-generated documentation for [checkpasswords.io.output](../../../../checkpasswords/io/output.py) module.
-
+[Checkpasswords Index](../../README.md#checkpasswords-index) /
+[Checkpasswords](../index.md#checkpasswords) /
+[Io](./index.md#io) /
 Output
 
-- [Checkpasswords](../../README.md#checkpasswords-index) / [Modules](../../MODULES.md#checkpasswords-modules) / [Checkpasswords](../index.md#checkpasswords) / [Io](index.md#io) / Output
-    - [ansi](#ansi)
-    - [jsonF](#jsonf)
-    - [markdown](#markdown)
-    - [plainText](#plaintext)
-    - [raw](#raw)
-    - [rawCsv](#rawcsv)
-    - [stripAnsi](#stripansi)
+> Auto-generated documentation for [checkpasswords.io.output](../../../../checkpasswords/io/output.py) module.
 
-- summary table
-- duplicate passwords table
-- weak passwords table
-- http sites table
-- enable2fa table
-- emails table
-
-To one of the following formats:
-
-- ansi
-- plain
-- markdown
-- json
-- raw
-- raw-csv
+- [Output](#output)
+  - [ansi](#ansi)
+  - [jsonF](#jsonf)
+  - [markdown](#markdown)
+  - [plainText](#plaintext)
+  - [raw](#raw)
+  - [rawCsv](#rawcsv)
+  - [stripAnsi](#stripansi)
 
 ## ansi
 
-[[find in source code]](../../../../checkpasswords/io/output.py#L45)
-
-```python
-def ansi(credentials: list[Credentials]) -> str:
-```
+[Show source in output.py:45](../../../../checkpasswords/io/output.py#L45)
 
 Format to ansi
 
@@ -48,17 +31,22 @@ Such as a bitwarden export to CSV
 
 - `str` - string to send to specified output in ansi format
 
+#### Signature
+
+```python
+def ansi(credentials: list[Credentials]) -> str:
+    ...
+```
+
 #### See also
 
 - [Credentials](../credentials.md#credentials)
 
+
+
 ## jsonF
 
-[[find in source code]](../../../../checkpasswords/io/output.py#L176)
-
-```python
-def jsonF(credentials: list[Credentials]) -> str:
-```
+[Show source in output.py:176](../../../../checkpasswords/io/output.py#L176)
 
 Format to json
 
@@ -71,17 +59,22 @@ Such as a bitwarden export to CSV
 
 - `str` - string to send to specified output in json format
 
+#### Signature
+
+```python
+def jsonF(credentials: list[Credentials]) -> str:
+    ...
+```
+
 #### See also
 
 - [Credentials](../credentials.md#credentials)
 
+
+
 ## markdown
 
-[[find in source code]](../../../../checkpasswords/io/output.py#L133)
-
-```python
-def markdown(credentials: list[Credentials]) -> str:
-```
+[Show source in output.py:133](../../../../checkpasswords/io/output.py#L133)
 
 Format to markdown
 
@@ -94,17 +87,22 @@ Such as a bitwarden export to CSV
 
 - `str` - string to send to specified output in markdown format
 
+#### Signature
+
+```python
+def markdown(credentials: list[Credentials]) -> str:
+    ...
+```
+
 #### See also
 
 - [Credentials](../credentials.md#credentials)
 
+
+
 ## plainText
 
-[[find in source code]](../../../../checkpasswords/io/output.py#L120)
-
-```python
-def plainText(credentials: list[Credentials]) -> str:
-```
+[Show source in output.py:120](../../../../checkpasswords/io/output.py#L120)
 
 Format to plain text
 
@@ -117,17 +115,22 @@ Such as a bitwarden export to CSV
 
 - `str` - string to send to specified output in plain text format
 
+#### Signature
+
+```python
+def plainText(credentials: list[Credentials]) -> str:
+    ...
+```
+
 #### See also
 
 - [Credentials](../credentials.md#credentials)
 
+
+
 ## raw
 
-[[find in source code]](../../../../checkpasswords/io/output.py#L214)
-
-```python
-def raw(credentials: list[Credentials]) -> str:
-```
+[Show source in output.py:214](../../../../checkpasswords/io/output.py#L214)
 
 Format to raw json
 
@@ -140,17 +143,22 @@ Such as a bitwarden export to CSV
 
 - `str` - string to send to specified output in raw json format
 
+#### Signature
+
+```python
+def raw(credentials: list[Credentials]) -> str:
+    ...
+```
+
 #### See also
 
 - [Credentials](../credentials.md#credentials)
 
+
+
 ## rawCsv
 
-[[find in source code]](../../../../checkpasswords/io/output.py#L227)
-
-```python
-def rawCsv(credentials: list[Credentials]) -> str:
-```
+[Show source in output.py:227](../../../../checkpasswords/io/output.py#L227)
 
 Format to raw csv
 
@@ -163,17 +171,22 @@ Such as a bitwarden export to CSV
 
 - `str` - string to send to specified output in raw csv format
 
+#### Signature
+
+```python
+def rawCsv(credentials: list[Credentials]) -> str:
+    ...
+```
+
 #### See also
 
 - [Credentials](../credentials.md#credentials)
 
+
+
 ## stripAnsi
 
-[[find in source code]](../../../../checkpasswords/io/output.py#L33)
-
-```python
-def stripAnsi(string: str) -> str:
-```
+[Show source in output.py:33](../../../../checkpasswords/io/output.py#L33)
 
 Strip ansi codes from a given string
 
@@ -184,3 +197,12 @@ Strip ansi codes from a given string
 #### Returns
 
 - `str` - plaintext, utf-8 string (safe for writing to files)
+
+#### Signature
+
+```python
+def stripAnsi(string: str) -> str:
+    ...
+```
+
+

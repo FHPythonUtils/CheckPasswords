@@ -1,25 +1,23 @@
 # Auxiliary
 
+[Checkpasswords Index](../README.md#checkpasswords-index) /
+[Checkpasswords](./index.md#checkpasswords) /
+Auxiliary
+
 > Auto-generated documentation for [checkpasswords.auxiliary](../../../checkpasswords/auxiliary.py) module.
 
-Auxiliary functions used by the credentials class
-
-- [Checkpasswords](../README.md#checkpasswords-index) / [Modules](../MODULES.md#checkpasswords-modules) / [Checkpasswords](index.md#checkpasswords) / Auxiliary
-    - [ZxcvbnScore](#zxcvbnscore)
-    - [entropyLen](#entropylen)
-    - [isHttp](#ishttp)
-    - [isMfaAvailable](#ismfaavailable)
-    - [isMfaEnabled](#ismfaenabled)
-    - [passwordPrint](#passwordprint)
-    - [zxcvbnScore](#zxcvbnscore)
+- [Auxiliary](#auxiliary)
+  - [ZxcvbnScore](#zxcvbnscore)
+  - [entropyLen](#entropylen)
+  - [isHttp](#ishttp)
+  - [isMfaAvailable](#ismfaavailable)
+  - [isMfaEnabled](#ismfaenabled)
+  - [passwordPrint](#passwordprint)
+  - [zxcvbnScore](#zxcvbnscore)
 
 ## ZxcvbnScore
 
-[[find in source code]](../../../checkpasswords/auxiliary.py#L13)
-
-```python
-class ZxcvbnScore(TypedDict):
-```
+[Show source in auxiliary.py:13](../../../checkpasswords/auxiliary.py#L13)
 
 ZxcvbnScore is a dict containing the following attributes:
 
@@ -27,23 +25,33 @@ ZxcvbnScore is a dict containing the following attributes:
 - suggestions: str
 - crack_time: float
 
-## entropyLen
-
-[[find in source code]](../../../checkpasswords/auxiliary.py#L50)
+#### Signature
 
 ```python
-def entropyLen(string: str):
+class ZxcvbnScore(TypedDict):
+    ...
 ```
+
+
+
+## entropyLen
+
+[Show source in auxiliary.py:50](../../../checkpasswords/auxiliary.py#L50)
 
 Calculates the Shannon entropy * length of a string
 
-## isHttp
-
-[[find in source code]](../../../checkpasswords/auxiliary.py#L38)
+#### Signature
 
 ```python
-def isHttp(urlstr: str) -> bool:
+def entropyLen(string: str):
+    ...
 ```
+
+
+
+## isHttp
+
+[Show source in auxiliary.py:38](../../../checkpasswords/auxiliary.py#L38)
 
 Use the urls field to determine if http is used instead of https
 
@@ -55,13 +63,18 @@ Use the urls field to determine if http is used instead of https
 
 - `bool` - isHttp
 
-## isMfaAvailable
-
-[[find in source code]](../../../checkpasswords/auxiliary.py#L95)
+#### Signature
 
 ```python
-def isMfaAvailable(urlstr: str) -> bool:
+def isHttp(urlstr: str) -> bool:
+    ...
 ```
+
+
+
+## isMfaAvailable
+
+[Show source in auxiliary.py:95](../../../checkpasswords/auxiliary.py#L95)
 
 Identify if mfa is available using data from https://2fa.directory/
 
@@ -73,13 +86,18 @@ Identify if mfa is available using data from https://2fa.directory/
 
 - `bool` - isMfaAvailable
 
-## isMfaEnabled
-
-[[find in source code]](../../../checkpasswords/auxiliary.py#L26)
+#### Signature
 
 ```python
-def isMfaEnabled(notes: str) -> bool:
+def isMfaAvailable(urlstr: str) -> bool:
+    ...
 ```
+
+
+
+## isMfaEnabled
+
+[Show source in auxiliary.py:26](../../../checkpasswords/auxiliary.py#L26)
 
 Use the notes field to determine if MFA has been enabled
 
@@ -91,13 +109,18 @@ Use the notes field to determine if MFA has been enabled
 
 - `bool` - isMfaEnabled
 
-## passwordPrint
-
-[[find in source code]](../../../checkpasswords/auxiliary.py#L78)
+#### Signature
 
 ```python
-def passwordPrint(password: str) -> str:
+def isMfaEnabled(notes: str) -> bool:
+    ...
 ```
+
+
+
+## passwordPrint
+
+[Show source in auxiliary.py:78](../../../checkpasswords/auxiliary.py#L78)
 
 Output a password whilst obfuscating details
 
@@ -109,13 +132,18 @@ Output a password whilst obfuscating details
 
 - `str` - obfuscated password
 
-## zxcvbnScore
-
-[[find in source code]](../../../checkpasswords/auxiliary.py#L57)
+#### Signature
 
 ```python
-def zxcvbnScore(password: str) -> ZxcvbnScore:
+def passwordPrint(password: str) -> str:
+    ...
 ```
+
+
+
+## zxcvbnScore
+
+[Show source in auxiliary.py:57](../../../checkpasswords/auxiliary.py#L57)
 
 Calculate a ZxcvbnScore from a password
 
@@ -125,8 +153,17 @@ Calculate a ZxcvbnScore from a password
 
 #### Returns
 
-- `ZxcvbnScore` - Return a dict of type ZxcvbnScore
+- [ZxcvbnScore](#zxcvbnscore) - Return a dict of type ZxcvbnScore
+
+#### Signature
+
+```python
+def zxcvbnScore(password: str) -> ZxcvbnScore:
+    ...
+```
 
 #### See also
 
 - [ZxcvbnScore](#zxcvbnscore)
+
+
