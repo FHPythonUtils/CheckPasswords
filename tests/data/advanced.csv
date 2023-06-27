@@ -1,0 +1,5 @@
+name,urls,username,password,notes,otpauth,zxcvbnScore,isPasswordDuplicate,passwordPrint,isHttp,isMfaAvailable,isMfaEnabled,instructEnableMfa
+Example,['http://example.com'],example@example.com,supersecret,This is a note,,"{'score': 1, 'suggestions': 'Add another word or two. Uncommon words are better.', 'crack_time': 0.10120599999999999}",False,su*******et,True,False,False,False
+Example2,['https://example2.com'],example2@example2.com,password123,This is another note,,"{'score': 0, 'suggestions': 'Add another word or two. Uncommon words are better.', 'crack_time': 0.000596}",False,pa*******23,False,False,False,False
+Example3,['https://example3.com'],example3@example3.com,2346ad27d7568ba9896f1b7da6b5991251debdf2,mfa enabled,,"{'score': 6, 'suggestions': '', 'crack_time': 4.73616e+32}",True,23************************************f2,False,False,True,False
+Aegis,['https://example3.com'],example3@example3.com,2346ad27d7568ba9896f1b7da6b5991251debdf2,in Aegis,,"{'score': 6, 'suggestions': '', 'crack_time': 4.73616e+32}",True,23************************************f2,False,False,True,False

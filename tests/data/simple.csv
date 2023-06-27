@@ -1,0 +1,2 @@
+name,urls,username,password,notes,otpauth,zxcvbnScore,isPasswordDuplicate,passwordPrint,isHttp,isMfaAvailable,isMfaEnabled,instructEnableMfa
+Example,['https://example.com'],example@example.com,supersecret,This is a note,otpauth://something_something,"{'score': 1, 'suggestions': 'Add another word or two. Uncommon words are better.', 'crack_time': 0.10120599999999999}",False,su*******et,False,False,True,False

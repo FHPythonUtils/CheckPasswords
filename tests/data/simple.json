@@ -1,0 +1,32 @@
+{
+	"info": {
+		"program": "checkpasswords",
+		"version": "2022"
+	},
+	"data": {
+		"summary": {
+			"duplicate_passwords": 0,
+			"weak_passwords": 1,
+			"http_sites": 0,
+			"enable_2fa": 0,
+			"emails": 1
+		},
+		"duplicate_passwords": [],
+		"weak_passwords": [
+			{
+				"Name": "Example",
+				"Username": "example@example.com",
+				"Password": "su*******et",
+				"Score": "1",
+				"Suggestion": "Add another word or two. Uncommon words are better."
+			}
+		],
+		"http_sites": [],
+		"enable_2fa": [],
+		"emails": [
+			{
+				"Emails": "example@example.com"
+			}
+		]
+	}
+}

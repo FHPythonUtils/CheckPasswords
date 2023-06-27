@@ -32,7 +32,23 @@ def isMfaEnabled(notes: str) -> bool:
 	Returns:
 		bool: isMfaEnabled
 	"""
-	return re.search(r"[2m]fa.*?enabled", notes, re.I) is not None
+
+	patterns = [
+		r"[2m]fa.*?enabled",
+		r"authenticated.*?x\d*",
+		r"sms.*?[2m]fa",
+		r"text.*?[2m]fa",
+		r"[2m]fa.*?sms",
+		r"[2m]fa.*?text",
+		r"\w.*?authenticat",
+		"aegis",
+		"otp",
+		"authy",
+		"keepass",
+		"duo",
+	]
+
+	return re.search("|".join(patterns), notes, re.I) is not None
 
 
 def isHttp(urlstr: str) -> bool:
@@ -68,7 +84,7 @@ def zxcvbnScore(password: str) -> ZxcvbnScore:
 	except IndexError:
 		return {"score": -1, "suggestions": "Add a password", "crack_time": -1}
 	return {
-		"score": scores["score"] + entropyLen(password) / 50,
+		"score": int(scores["score"] + entropyLen(password) / 50),
 		"suggestions": " ".join(scores["feedback"]["suggestions"]),
 		"crack_time": float(scores["crack_times_seconds"]["offline_slow_hashing_1e4_per_second"])
 		/ 100,
@@ -84,7 +100,7 @@ def passwordPrint(password: str) -> str:
 	Returns:
 		str: obfuscated password
 	"""
-	if len(password) < 5:
+	if len(password) < 7:
 		return "*" * len(password)
 	return password[:2] + ("*" * (len(password) - 4)) + password[-2:]
 

@@ -1,0 +1,92 @@
+{
+	"info": {
+		"program": "checkpasswords",
+		"version": "2022"
+	},
+	"credentials": [
+		{
+			"name": "Example",
+			"urls": [
+				"http://example.com"
+			],
+			"username": "example@example.com",
+			"password": "supersecret",
+			"notes": "This is a note",
+			"otpauth": "",
+			"zxcvbnScore": {
+				"score": 1,
+				"suggestions": "Add another word or two. Uncommon words are better.",
+				"crack_time": 0.10120599999999999
+			},
+			"isPasswordDuplicate": false,
+			"passwordPrint": "su*******et",
+			"isHttp": true,
+			"isMfaAvailable": false,
+			"isMfaEnabled": false,
+			"instructEnableMfa": false
+		},
+		{
+			"name": "Example2",
+			"urls": [
+				"https://example2.com"
+			],
+			"username": "example2@example2.com",
+			"password": "password123",
+			"notes": "This is another note",
+			"otpauth": "",
+			"zxcvbnScore": {
+				"score": 0,
+				"suggestions": "Add another word or two. Uncommon words are better.",
+				"crack_time": 0.000596
+			},
+			"isPasswordDuplicate": false,
+			"passwordPrint": "pa*******23",
+			"isHttp": false,
+			"isMfaAvailable": false,
+			"isMfaEnabled": false,
+			"instructEnableMfa": false
+		},
+		{
+			"name": "Example3",
+			"urls": [
+				"https://example3.com"
+			],
+			"username": "example3@example3.com",
+			"password": "2346ad27d7568ba9896f1b7da6b5991251debdf2",
+			"notes": "mfa enabled",
+			"otpauth": "",
+			"zxcvbnScore": {
+				"score": 6,
+				"suggestions": "",
+				"crack_time": 4.73616e+32
+			},
+			"isPasswordDuplicate": true,
+			"passwordPrint": "23************************************f2",
+			"isHttp": false,
+			"isMfaAvailable": false,
+			"isMfaEnabled": true,
+			"instructEnableMfa": false
+		},
+		{
+			"name": "Aegis",
+			"urls": [
+				"https://example3.com"
+			],
+			"username": "example3@example3.com",
+			"password": "2346ad27d7568ba9896f1b7da6b5991251debdf2",
+			"notes": "in Aegis",
+			"otpauth": "",
+			"zxcvbnScore": {
+				"score": 6,
+				"suggestions": "",
+				"crack_time": 4.73616e+32
+			},
+			"isPasswordDuplicate": true,
+			"passwordPrint": "23************************************f2",
+			"isHttp": false,
+			"isMfaAvailable": false,
+			"isMfaEnabled": true,
+			"instructEnableMfa": false
+		}
+	]
+}

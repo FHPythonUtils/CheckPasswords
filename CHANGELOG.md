@@ -3,6 +3,14 @@
 All major and minor version changes will be documented in this file. Details of
 patch-level version changes can be found in [commit messages](../../commits/master).
 
+## 2023 - 2023/06/27
+
+- Add tests
+- Add support for more 2fa enabled notes
+- Update deps
+- Update `mfa_sites.txt`
+- Typing improvements
+
 ## 2022.0.1 - 2022/04/09
 
 - First release

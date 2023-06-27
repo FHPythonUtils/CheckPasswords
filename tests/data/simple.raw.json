@@ -1,0 +1,29 @@
+{
+	"info": {
+		"program": "checkpasswords",
+		"version": "2022"
+	},
+	"credentials": [
+		{
+			"name": "Example",
+			"urls": [
+				"https://example.com"
+			],
+			"username": "example@example.com",
+			"password": "supersecret",
+			"notes": "This is a note",
+			"otpauth": "otpauth://something_something",
+			"zxcvbnScore": {
+				"score": 1,
+				"suggestions": "Add another word or two. Uncommon words are better.",
+				"crack_time": 0.10120599999999999
+			},
+			"isPasswordDuplicate": false,
+			"passwordPrint": "su*******et",
+			"isHttp": false,
+			"isMfaAvailable": false,
+			"isMfaEnabled": true,
+			"instructEnableMfa": false
+		}
+	]
+}

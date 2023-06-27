@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "checkpasswords"
-version = "2022.0.1"
+version = "2023"
 license = "GPL-3.0-or-later"
 description = "CheckPasswords uses pass_import to read a password manager source file to check for duplicate passwords; check for weak passwords; identify http sites; list available 2fa options; list emails"
 authors = ["FredHappyface"]
@@ -28,14 +28,17 @@ CheckPasswords = 'checkpasswords:cli'
 
 [tool.poetry.dependencies]
 python = "^3.8"
-rich = "<13,>=12.2.0"
+rich = "<14,>=13.4.2"
 zxcvbn-python = "<5,>=4.4.24"
-pass-import = "<4,>=3.2"
+pass-import = "<4,>=3.4"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.1.1"
 pylint = "^2.13.5"
 handsdown = "^1.1.0"
+
+[tool.poetry.group.dev.dependencies]
+gitpython = "^3.1.31"
 
 [tool.black]
 line-length = 100

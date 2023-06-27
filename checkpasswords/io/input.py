@@ -40,7 +40,21 @@ def passImport(path: str, manager: str | None = None) -> list[Credentials]:
 	conf["importer"] = passManager.name
 	data = pass_import(conf, passManager)
 
-	# Convert pass_import representation to checkpasswords representation (list[Credentials])
+	if data is None:
+		raise RuntimeError(
+			f"Failed to handle password file from {path} (password_manager={manager})"
+		)
+
+	return transformPass(data)
+
+
+def transformPass(data: list[dict]) -> list[Credentials]:
+	"""Convert pass_import representation to checkpasswords representation (list[Credentials])
+
+
+	:param dict list[dict]: pass_import representation
+	:return list[Credentials]: checkpasswords representation
+	"""
 	credentials = []
 	for row in data:
 		credentials.append(
@@ -54,7 +68,7 @@ def passImport(path: str, manager: str | None = None) -> list[Credentials]:
 				username=row.get("login", ""),
 				password=row.get("password", ""),
 				notes=row.get("comments", ""),
-				totp=row.get("otpauth", ""),
+				otpauth=row.get("otpauth", ""),
 			)
 		)
 	return credentials

@@ -14,7 +14,6 @@ Output
   - [plainText](#plaintext)
   - [raw](#raw)
   - [rawCsv](#rawcsv)
-  - [stripAnsi](#stripansi)
 
 ## ansi
 
@@ -181,28 +180,5 @@ def rawCsv(credentials: list[Credentials]) -> str:
 #### See also
 
 - [Credentials](../credentials.md#credentials)
-
-
-
-## stripAnsi
-
-[Show source in output.py:33](../../../../checkpasswords/io/output.py#L33)
-
-Strip ansi codes from a given string
-
-#### Arguments
-
-- `string` *str* - string to strip codes from
-
-#### Returns
-
-- `str` - plaintext, utf-8 string (safe for writing to files)
-
-#### Signature
-
-```python
-def stripAnsi(string: str) -> str:
-    ...
-```
 
 

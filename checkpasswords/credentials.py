@@ -36,7 +36,7 @@ class Credentials:  # pylint: disable=too-many-instance-attributes
 	username: str
 	password: str
 	notes: str
-	totp: str
+	otpauth: str
 	zxcvbnScore: ZxcvbnScore = field(init=False)
 	isPasswordDuplicate: bool = field(init=False)
 	passwordPrint: str = field(init=False)
@@ -53,7 +53,7 @@ class Credentials:  # pylint: disable=too-many-instance-attributes
 		self.passwordPrint = passwordPrint(self.password)
 		self.isHttp = isHttp(urlstr)
 		self.isMfaAvailable = isMfaAvailable(urlstr)
-		self.isMfaEnabled = len(self.totp) > 0 or isMfaEnabled(self.notes)
+		self.isMfaEnabled = len(self.otpauth) > 0 or isMfaEnabled(self.notes)
 		self.instructEnableMfa = self.isMfaAvailable and not self.isMfaEnabled
 
 
@@ -105,32 +105,32 @@ def generateTables(credentials: list[Credentials]) -> tuple[list[tuple[str, ...]
 	credentials = orderCredentials(credentials)
 	applyPasswordDuplicate(credentials)
 
-	duplicatePasswordsTable = [("Name", "Username", "Password")] + [  # type: ignore
+	duplicatePasswordsTable = [("Name", "Username", "Password")] + [
 		(cred.name, cred.username, cred.passwordPrint)
 		for cred in credentials
 		if cred.isPasswordDuplicate
 	]
 
-	weakPasswordsTable = [("Name", "Username", "Password", "Score", "Suggestion")] + [  # type: ignore
+	weakPasswordsTable = [("Name", "Username", "Password", "Score", "Suggestion")] + [
 		(
 			cred.name,
 			cred.username,
 			cred.passwordPrint,
-			cred.zxcvbnScore["score"],
+			str(cred.zxcvbnScore["score"]),
 			cred.zxcvbnScore["suggestions"],
 		)
 		for cred in credentials
 		if -1 < cred.zxcvbnScore["score"] < 4
 	]
 
-	httpSitesTable = [("Name", "Username")] + [  # type: ignore
+	httpSitesTable = [("Name", "Username")] + [
 		(cred.name, cred.username) for cred in credentials if cred.isHttp
 	]
 
-	enable2faTable = [("Name", "Username")] + [  # type: ignore
+	enable2faTable = [("Name", "Username")] + [
 		(cred.name, cred.username) for cred in credentials if cred.instructEnableMfa
 	]
 
-	emailsTable = [("Emails",)] + [(email,) for email in sorted(emails(credentials))]  # type: ignore
+	emailsTable = [("Emails",)] + [(email,) for email in sorted(emails(credentials))]
 
 	return duplicatePasswordsTable, weakPasswordsTable, httpSitesTable, enable2faTable, emailsTable

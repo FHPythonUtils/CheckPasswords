@@ -1,0 +1,34 @@
+
+Summary
+|Issue|No. Instances|
+|:--|:--|
+|Duplicate Passwords|0
+|Weak Passwords|1
+|HTTP Sites|0
+|Enable 2FA|0
+|Emails|1
+
+Duplicate Passwords
+|Name|Username|Password|
+|:--|:--|:--|
+
+
+Weak Passwords
+|Name|Username|Password|Score|Suggestion
+|:--|:--|:--|:--|:--|
+|Example|example@example.com|su*******et|1|Add another word or two. Uncommon words are better.|
+
+HTTP Sites
+|Name|Username|
+|:--|:--
+
+
+Enable 2FA
+|Name|Username|
+|:--|:--|
+
+
+Emails
+|Emails|
+|:--|
+|example@example.com|

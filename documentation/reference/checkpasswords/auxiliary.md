@@ -36,7 +36,7 @@ class ZxcvbnScore(TypedDict):
 
 ## entropyLen
 
-[Show source in auxiliary.py:50](../../../checkpasswords/auxiliary.py#L50)
+[Show source in auxiliary.py:66](../../../checkpasswords/auxiliary.py#L66)
 
 Calculates the Shannon entropy * length of a string
 
@@ -51,7 +51,7 @@ def entropyLen(string: str):
 
 ## isHttp
 
-[Show source in auxiliary.py:38](../../../checkpasswords/auxiliary.py#L38)
+[Show source in auxiliary.py:54](../../../checkpasswords/auxiliary.py#L54)
 
 Use the urls field to determine if http is used instead of https
 
@@ -74,7 +74,7 @@ def isHttp(urlstr: str) -> bool:
 
 ## isMfaAvailable
 
-[Show source in auxiliary.py:95](../../../checkpasswords/auxiliary.py#L95)
+[Show source in auxiliary.py:111](../../../checkpasswords/auxiliary.py#L111)
 
 Identify if mfa is available using data from https://2fa.directory/
 
@@ -120,7 +120,7 @@ def isMfaEnabled(notes: str) -> bool:
 
 ## passwordPrint
 
-[Show source in auxiliary.py:78](../../../checkpasswords/auxiliary.py#L78)
+[Show source in auxiliary.py:94](../../../checkpasswords/auxiliary.py#L94)
 
 Output a password whilst obfuscating details
 
@@ -143,7 +143,7 @@ def passwordPrint(password: str) -> str:
 
 ## zxcvbnScore
 
-[Show source in auxiliary.py:57](../../../checkpasswords/auxiliary.py#L57)
+[Show source in auxiliary.py:73](../../../checkpasswords/auxiliary.py#L73)
 
 Calculate a ZxcvbnScore from a password
 

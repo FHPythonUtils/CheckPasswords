@@ -1,0 +1,14 @@
+Aegis Authenticator
+AndOTP
+Authy
+Bitwarden Authenticator
+Duo Mobile
+ESET Secure Authentication
+FreeOTP
+Google Authenticator
+KeePassXC
+LastPass Authenticator
+Microsoft Authenticator
+OTP Auth
+TOTP Authenticator
+YubiKey Authenticator

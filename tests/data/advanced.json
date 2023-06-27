@@ -1,0 +1,61 @@
+{
+	"info": {
+		"program": "checkpasswords",
+		"version": "2022"
+	},
+	"data": {
+		"summary": {
+			"duplicate_passwords": 2,
+			"weak_passwords": 2,
+			"http_sites": 1,
+			"enable_2fa": 0,
+			"emails": 3
+		},
+		"duplicate_passwords": [
+			{
+				"Name": "Example3",
+				"Username": "example3@example3.com",
+				"Password": "23************************************f2"
+			},
+			{
+				"Name": "Aegis",
+				"Username": "example3@example3.com",
+				"Password": "23************************************f2"
+			}
+		],
+		"weak_passwords": [
+			{
+				"Name": "Example2",
+				"Username": "example2@example2.com",
+				"Password": "pa*******23",
+				"Score": "0",
+				"Suggestion": "Add another word or two. Uncommon words are better."
+			},
+			{
+				"Name": "Example",
+				"Username": "example@example.com",
+				"Password": "su*******et",
+				"Score": "1",
+				"Suggestion": "Add another word or two. Uncommon words are better."
+			}
+		],
+		"http_sites": [
+			{
+				"Name": "Example",
+				"Username": "example@example.com"
+			}
+		],
+		"enable_2fa": [],
+		"emails": [
+			{
+				"Emails": "example2@example2.com"
+			},
+			{
+				"Emails": "example3@example3.com"
+			},
+			{
+				"Emails": "example@example.com"
+			}
+		]
+	}
+}

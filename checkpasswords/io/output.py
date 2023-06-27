@@ -30,7 +30,7 @@ from checkpasswords.credentials import Credentials, generateTables
 INFO = {"program": "checkpasswords", "version": "2022"}
 
 
-def stripAnsi(string: str) -> str:
+def _stripAnsi(string: str) -> str:
 	"""Strip ansi codes from a given string
 
 	Args:
@@ -127,7 +127,7 @@ def plainText(credentials: list[Credentials]) -> str:
 	Returns:
 		str: string to send to specified output in plain text format
 	"""
-	return stripAnsi(ansi(credentials))
+	return _stripAnsi(ansi(credentials))
 
 
 def markdown(credentials: list[Credentials]) -> str:

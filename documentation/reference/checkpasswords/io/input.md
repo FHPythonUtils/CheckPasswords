@@ -9,6 +9,7 @@ Input
 
 - [Input](#input)
   - [passImport](#passimport)
+  - [transformPass](#transformpass)
 
 ## passImport
 
@@ -30,6 +31,28 @@ Defaults to None.
 
 ```python
 def passImport(path: str, manager: str | None = None) -> list[Credentials]:
+    ...
+```
+
+
+
+## transformPass
+
+[Show source in input.py:51](../../../../checkpasswords/io/input.py#L51)
+
+Convert pass_import representation to checkpasswords representation (list[Credentials])
+
+:param dict list[dict]: pass_import representation
+
+#### Returns
+
+Type: *list[Credentials]*
+checkpasswords representation
+
+#### Signature
+
+```python
+def transformPass(data: list[dict]) -> list[Credentials]:
     ...
 ```
 
