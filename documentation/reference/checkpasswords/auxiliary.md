@@ -28,8 +28,7 @@ ZxcvbnScore is a dict containing the following attributes:
 #### Signature
 
 ```python
-class ZxcvbnScore(TypedDict):
-    ...
+class ZxcvbnScore(TypedDict): ...
 ```
 
 
@@ -43,8 +42,7 @@ Calculates the Shannon entropy * length of a string
 #### Signature
 
 ```python
-def entropyLen(string: str):
-    ...
+def entropyLen(string: str): ...
 ```
 
 
@@ -66,8 +64,7 @@ Use the urls field to determine if http is used instead of https
 #### Signature
 
 ```python
-def isHttp(urlstr: str) -> bool:
-    ...
+def isHttp(urlstr: str) -> bool: ...
 ```
 
 
@@ -89,8 +86,7 @@ Identify if mfa is available using data from https://2fa.directory/
 #### Signature
 
 ```python
-def isMfaAvailable(urlstr: str) -> bool:
-    ...
+def isMfaAvailable(urlstr: str) -> bool: ...
 ```
 
 
@@ -112,8 +108,7 @@ Use the notes field to determine if MFA has been enabled
 #### Signature
 
 ```python
-def isMfaEnabled(notes: str) -> bool:
-    ...
+def isMfaEnabled(notes: str) -> bool: ...
 ```
 
 
@@ -135,8 +130,7 @@ Output a password whilst obfuscating details
 #### Signature
 
 ```python
-def passwordPrint(password: str) -> str:
-    ...
+def passwordPrint(password: str) -> str: ...
 ```
 
 
@@ -158,12 +152,9 @@ Calculate a ZxcvbnScore from a password
 #### Signature
 
 ```python
-def zxcvbnScore(password: str) -> ZxcvbnScore:
-    ...
+def zxcvbnScore(password: str) -> ZxcvbnScore: ...
 ```
 
 #### See also
 
 - [ZxcvbnScore](#zxcvbnscore)
-
-

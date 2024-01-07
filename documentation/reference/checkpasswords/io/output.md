@@ -33,8 +33,7 @@ Such as a bitwarden export to CSV
 #### Signature
 
 ```python
-def ansi(credentials: list[Credentials]) -> str:
-    ...
+def ansi(credentials: list[Credentials]) -> str: ...
 ```
 
 #### See also
@@ -61,8 +60,7 @@ Such as a bitwarden export to CSV
 #### Signature
 
 ```python
-def jsonF(credentials: list[Credentials]) -> str:
-    ...
+def jsonF(credentials: list[Credentials]) -> str: ...
 ```
 
 #### See also
@@ -89,8 +87,7 @@ Such as a bitwarden export to CSV
 #### Signature
 
 ```python
-def markdown(credentials: list[Credentials]) -> str:
-    ...
+def markdown(credentials: list[Credentials]) -> str: ...
 ```
 
 #### See also
@@ -117,8 +114,7 @@ Such as a bitwarden export to CSV
 #### Signature
 
 ```python
-def plainText(credentials: list[Credentials]) -> str:
-    ...
+def plainText(credentials: list[Credentials]) -> str: ...
 ```
 
 #### See also
@@ -145,8 +141,7 @@ Such as a bitwarden export to CSV
 #### Signature
 
 ```python
-def raw(credentials: list[Credentials]) -> str:
-    ...
+def raw(credentials: list[Credentials]) -> str: ...
 ```
 
 #### See also
@@ -173,12 +168,9 @@ Such as a bitwarden export to CSV
 #### Signature
 
 ```python
-def rawCsv(credentials: list[Credentials]) -> str:
-    ...
+def rawCsv(credentials: list[Credentials]) -> str: ...
 ```
 
 #### See also
 
 - [Credentials](../credentials.md#credentials)
-
-

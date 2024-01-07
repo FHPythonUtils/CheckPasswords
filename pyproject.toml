@@ -28,14 +28,14 @@ CheckPasswords = 'checkpasswords:cli'
 
 [tool.poetry.dependencies]
 python = "^3.8"
-rich = "<14,>=13.4.2"
+rich = "<14,>=13.7.0"
 zxcvbn-python = "<5,>=4.4.24"
 pass-import = "<4,>=3.4"
 
 [tool.poetry.dev-dependencies]
-pytest = "^7.1.1"
-pylint = "^2.13.5"
-handsdown = "^1.1.0"
+pytest = "^7.4.4"
+pylint = "^3.0.3"
+handsdown = "^2.1.0"
 
 [tool.poetry.group.dev.dependencies]
 gitpython = "^3.1.31"

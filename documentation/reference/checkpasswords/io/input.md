@@ -30,8 +30,7 @@ Defaults to None.
 #### Signature
 
 ```python
-def passImport(path: str, manager: str | None = None) -> list[Credentials]:
-    ...
+def passImport(path: str, manager: str | None = None) -> list[Credentials]: ...
 ```
 
 
@@ -52,8 +51,5 @@ checkpasswords representation
 #### Signature
 
 ```python
-def transformPass(data: list[dict]) -> list[Credentials]:
-    ...
+def transformPass(data: list[dict]) -> list[Credentials]: ...
 ```
-
-

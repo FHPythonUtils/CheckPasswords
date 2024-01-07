@@ -35,8 +35,7 @@ Used to:
 #### Signature
 
 ```python
-class Credentials:
-    ...
+class Credentials: ...
 ```
 
 ### Credentials().__post_init__
@@ -48,8 +47,7 @@ Populate/ update various attributes using auxiliary functions
 #### Signature
 
 ```python
-def __post_init__(self):
-    ...
+def __post_init__(self): ...
 ```
 
 
@@ -67,8 +65,7 @@ Apply duplicate password flag to each credentials
 #### Signature
 
 ```python
-def applyPasswordDuplicate(credentials: list[Credentials]):
-    ...
+def applyPasswordDuplicate(credentials: list[Credentials]): ...
 ```
 
 #### See also
@@ -94,8 +91,7 @@ Return a set of unique emails from the list of credentials
 #### Signature
 
 ```python
-def emails(credentials: list[Credentials]) -> set[str]:
-    ...
+def emails(credentials: list[Credentials]) -> set[str]: ...
 ```
 
 #### See also
@@ -118,8 +114,9 @@ Such as a bitwarden export to CSV
 #### Signature
 
 ```python
-def generateTables(credentials: list[Credentials]) -> tuple[list[tuple[str, ...]], ...]:
-    ...
+def generateTables(
+    credentials: list[Credentials],
+) -> tuple[list[tuple[str, ...]], ...]: ...
 ```
 
 #### See also
@@ -146,12 +143,9 @@ Such as a bitwarden export to CSV
 #### Signature
 
 ```python
-def orderCredentials(credentials: list[Credentials]) -> list[Credentials]:
-    ...
+def orderCredentials(credentials: list[Credentials]) -> list[Credentials]: ...
 ```
 
 #### See also
 
 - [Credentials](#credentials)
-
-

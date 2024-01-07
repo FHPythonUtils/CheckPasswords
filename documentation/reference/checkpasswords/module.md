@@ -18,8 +18,5 @@ Main entry point.
 #### Signature
 
 ```python
-def main():
-    ...
+def main(): ...
 ```
-
-
