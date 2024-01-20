@@ -1,6 +1,8 @@
 from checkpasswords import credentials
 from checkpasswords.io import input
 
+# ruff: noqa: S106
+
 passData = [
 	{
 		"password": "UuQHzvv6IHRIJGjwKru7",
@@ -18,7 +20,7 @@ passData = [
 ]
 
 
-def test_transformPass():
+def test_transformPass() -> None:
 	assert input.transformPass(passData) == [
 		credentials.Credentials(
 			name="test1",

@@ -1,5 +1,7 @@
-"""Credentials class and associated methods
+"""Credentials class and associated methods.
 """
+from __future__ import annotations
+
 import re
 from collections import Counter
 from dataclasses import dataclass, field
@@ -15,14 +17,14 @@ from checkpasswords.auxiliary import (
 
 
 @dataclass
-class Credentials:  # pylint: disable=too-many-instance-attributes
+class Credentials:
 	"""Credentials storing raw data from IO and inferred data such as:
 	- zxcvbnScore
 	- isPasswordDuplicate
 	- passwordPrint
 	- isHttp
 	- isMfaAvailable
-	- isMfaEnabled
+	- isMfaEnabled.
 
 	Used to:
 	- check for duplicate passwords
@@ -44,8 +46,8 @@ class Credentials:  # pylint: disable=too-many-instance-attributes
 	isMfaAvailable: bool = field(init=False)
 	isMfaEnabled: bool = field(init=False)
 
-	def __post_init__(self):
-		"""Populate/ update various attributes using auxiliary functions"""
+	def __post_init__(self) -> Credentials:
+		"""Populate/ update various attributes using auxiliary functions."""
 		self.username = self.username.strip()
 		urlstr = " ".join(self.urls).lower()
 		self.zxcvbnScore = zxcvbnScore(self.password)
@@ -57,10 +59,11 @@ class Credentials:  # pylint: disable=too-many-instance-attributes
 		self.instructEnableMfa = self.isMfaAvailable and not self.isMfaEnabled
 
 
-def applyPasswordDuplicate(credentials: list[Credentials]):
-	"""Apply duplicate password flag to each credentials
+def applyPasswordDuplicate(credentials: list[Credentials]) -> None:
+	"""Apply duplicate password flag to each credentials.
 
 	Args:
+	----
 		credentials (list[Credentials]): list of all credentials
 	"""
 	duplicates = [
@@ -71,34 +74,39 @@ def applyPasswordDuplicate(credentials: list[Credentials]):
 
 
 def emails(credentials: list[Credentials]) -> set[str]:
-	"""Return a set of unique emails from the list of credentials
+	"""Return a set of unique emails from the list of credentials.
 
 	Args:
+	----
 		credentials (list[Credentials]): list of all credentials
 
 	Returns:
+	-------
 		set[str]: set of unique emails
 	"""
 	return {x.username.lower() for x in credentials if re.match(r"[^@]+@[^@]+\.[^@]+", x.username)}
 
 
 def orderCredentials(credentials: list[Credentials]) -> list[Credentials]:
-	"""Order credentials by password crack time
+	"""Order credentials by password crack time.
 
 	Args:
+	----
 		credentials (list[Credentials]): list of credentials parsed from some input file.
 		Such as a bitwarden export to CSV
 
 	Returns:
+	-------
 		list[Credentials]: sorted credentials
 	"""
 	return sorted(credentials, key=lambda x: x.zxcvbnScore["crack_time"])
 
 
 def generateTables(credentials: list[Credentials]) -> tuple[list[tuple[str, ...]], ...]:
-	"""generateTables
+	"""generateTables.
 
 	Args:
+	----
 		credentials (list[Credentials]): list of credentials parsed from some input file.
 		Such as a bitwarden export to CSV
 	"""

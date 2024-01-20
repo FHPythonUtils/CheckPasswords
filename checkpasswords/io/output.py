@@ -1,4 +1,4 @@
-"""Output
+"""Output.
 
 - summary table
 - duplicate passwords table
@@ -16,11 +16,13 @@ To one of the following formats:
 - raw
 - raw-csv
 """
+from __future__ import annotations
 
 import csv
 import json
 import re
 from io import StringIO
+from typing import Any
 
 from rich.console import Console
 from rich.table import Table
@@ -31,25 +33,29 @@ INFO = {"program": "checkpasswords", "version": "2022"}
 
 
 def _stripAnsi(string: str) -> str:
-	"""Strip ansi codes from a given string
+	"""Strip ansi codes from a given string.
 
 	Args:
+	----
 		string (str): string to strip codes from
 
 	Returns:
+	-------
 		str: plaintext, utf-8 string (safe for writing to files)
 	"""
 	return re.compile(r"\x1B(?:[@-Z\\-_]|\[[0-?]*[ -/]*[@-~])").sub("", string)
 
 
 def ansi(credentials: list[Credentials]) -> str:
-	"""Format to ansi
+	"""Format to ansi.
 
 	Args:
+	----
 		credentials (list[Credentials]): list of credentials parsed from some input file.
 		Such as a bitwarden export to CSV
 
 	Returns:
+	-------
 		str: string to send to specified output in ansi format
 	"""
 	(
@@ -64,7 +70,9 @@ def ansi(credentials: list[Credentials]) -> str:
 
 	console = Console(file=string, color_system="truecolor")
 
-	count = lambda x: f"[{'green' if len(x) < 2 else 'red'}]{len(x)-1}[/]"
+	def count(x: list[Any]) -> str:
+		return f"[{'green' if len(x) < 2 else 'red'}]{len(x) - 1}[/]"
+
 	table = Table(title="\nSummary")
 	table.add_column("Issue", style="cyan")
 	table.add_column("No. Instances")
@@ -118,26 +126,30 @@ def ansi(credentials: list[Credentials]) -> str:
 
 
 def plainText(credentials: list[Credentials]) -> str:
-	"""Format to plain text
+	"""Format to plain text.
 
 	Args:
+	----
 		credentials (list[Credentials]): list of credentials parsed from some input file.
 		Such as a bitwarden export to CSV
 
 	Returns:
+	-------
 		str: string to send to specified output in plain text format
 	"""
 	return _stripAnsi(ansi(credentials))
 
 
 def markdown(credentials: list[Credentials]) -> str:
-	"""Format to markdown
+	"""Format to markdown.
 
 	Args:
+	----
 		credentials (list[Credentials]): list of credentials parsed from some input file.
 		Such as a bitwarden export to CSV
 
 	Returns:
+	-------
 		str: string to send to specified output in markdown format
 	"""
 	strBuf = []
@@ -148,15 +160,19 @@ def markdown(credentials: list[Credentials]) -> str:
 		enable2faTable,
 		emailsTable,
 	) = generateTables(credentials)
-	count = lambda x: len(x) - 1
-	toTB = lambda z: "\n".join([f'|{"|".join([str(y) for y in x])}|' for x in z[1:]])
+
+	def count(x: list[Any]) -> int:
+		return len(x) - 1
+
+	def toTB(z: list[tuple[Any, ...]]) -> str:
+		return "\n".join([f"|{'|'.join([str(y) for y in x])}|" for x in z[1:]])
 
 	strBuf.append("\nSummary\n|Issue|No. Instances|\n|:--|:--|")
-	strBuf.append(f"|Duplicate Passwords|{count((duplicatePasswordsTable))}")
-	strBuf.append(f"|Weak Passwords|{count((weakPasswordsTable))}")
-	strBuf.append(f"|HTTP Sites|{count((httpSitesTable))}")
-	strBuf.append(f"|Enable 2FA|{count((enable2faTable))}")
-	strBuf.append(f"|Emails|{count((emailsTable))}")
+	strBuf.append(f"|Duplicate Passwords|{count(duplicatePasswordsTable)}")
+	strBuf.append(f"|Weak Passwords|{count(weakPasswordsTable)}")
+	strBuf.append(f"|HTTP Sites|{count(httpSitesTable)}")
+	strBuf.append(f"|Enable 2FA|{count(enable2faTable)}")
+	strBuf.append(f"|Emails|{count(emailsTable)}")
 
 	strBuf.append("\nDuplicate Passwords\n|Name|Username|Password|\n|:--|:--|:--|")
 	strBuf.append(toTB(duplicatePasswordsTable))
@@ -174,13 +190,15 @@ def markdown(credentials: list[Credentials]) -> str:
 
 
 def jsonF(credentials: list[Credentials]) -> str:
-	"""Format to json
+	"""Format to json.
 
 	Args:
+	----
 		credentials (list[Credentials]): list of credentials parsed from some input file.
 		Such as a bitwarden export to CSV
 
 	Returns:
+	-------
 		str: string to send to specified output in json format
 	"""
 	(
@@ -190,8 +208,12 @@ def jsonF(credentials: list[Credentials]) -> str:
 		enable2faTable,
 		emailsTable,
 	) = generateTables(credentials)
-	count = lambda x: len(x) - 1
-	toDict = lambda z: [{z[0][y]: x[y] for y, _ in enumerate(x)} for x in z[1:]]
+
+	def count(x: list[Any]) -> int:
+		return len(x) - 1
+
+	def toDict(z: list[tuple[str:Any]]) -> list[dict]:
+		return [{z[0][y]: x[y] for y, _ in enumerate(x)} for x in z[1:]]
 
 	data = {
 		"summary": {
@@ -212,26 +234,30 @@ def jsonF(credentials: list[Credentials]) -> str:
 
 
 def raw(credentials: list[Credentials]) -> str:
-	"""Format to raw json
+	"""Format to raw json.
 
 	Args:
+	----
 		credentials (list[Credentials]): list of credentials parsed from some input file.
 		Such as a bitwarden export to CSV
 
 	Returns:
+	-------
 		str: string to send to specified output in raw json format
 	"""
 	return json.dumps({"info": INFO, "credentials": [x.__dict__ for x in credentials]}, indent="\t")
 
 
 def rawCsv(credentials: list[Credentials]) -> str:
-	"""Format to raw csv
+	"""Format to raw csv.
 
 	Args:
+	----
 		credentials (list[Credentials]): list of credentials parsed from some input file.
 		Such as a bitwarden export to CSV
 
 	Returns:
+	-------
 		str: string to send to specified output in raw csv format
 	"""
 	string = StringIO()

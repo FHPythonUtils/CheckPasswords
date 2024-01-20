@@ -1,4 +1,4 @@
-"""Auxiliary functions used by the credentials class
+"""Auxiliary functions used by the credentials class.
 """
 import math
 import re
@@ -11,7 +11,7 @@ THISDIR = str(Path(__file__).resolve().parent)
 
 
 class ZxcvbnScore(TypedDict):
-	"""ZxcvbnScore is a dict containing the following attributes:
+	"""ZxcvbnScore is a dict containing the following attributes.
 
 	- score: int
 	- suggestions: str
@@ -24,12 +24,14 @@ class ZxcvbnScore(TypedDict):
 
 
 def isMfaEnabled(notes: str) -> bool:
-	"""Use the notes field to determine if MFA has been enabled
+	"""Use the notes field to determine if MFA has been enabled.
 
 	Args:
+	----
 		notes (str): notes field
 
 	Returns:
+	-------
 		bool: isMfaEnabled
 	"""
 
@@ -52,31 +54,35 @@ def isMfaEnabled(notes: str) -> bool:
 
 
 def isHttp(urlstr: str) -> bool:
-	"""Use the urls field to determine if http is used instead of https
+	"""Use the urls field to determine if http is used instead of https.
 
 	Args:
+	----
 		urlstr (str): urlstr field
 
 	Returns:
+	-------
 		bool: isHttp
 	"""
 	return "http:" in urlstr
 
 
-def entropyLen(string: str):
-	"""Calculates the Shannon entropy * length of a string"""
+def entropyLen(string: str) -> float:
+	"""Calculate the Shannon entropy * length of a string."""
 	prob = [string.count(c) / len(string) for c in set(string)]
 	entropy = -sum(p * math.log(p) / math.log(2.0) for p in prob)
 	return entropy * len(string)
 
 
 def zxcvbnScore(password: str) -> ZxcvbnScore:
-	"""Calculate a ZxcvbnScore from a password
+	"""Calculate a ZxcvbnScore from a password.
 
 	Args:
+	----
 		password (str): password
 
 	Returns:
+	-------
 		ZxcvbnScore: Return a dict of type ZxcvbnScore
 	"""
 	try:
@@ -92,12 +98,14 @@ def zxcvbnScore(password: str) -> ZxcvbnScore:
 
 
 def passwordPrint(password: str) -> str:
-	"""Output a password whilst obfuscating details
+	"""Output a password whilst obfuscating details.
 
 	Args:
+	----
 		password (str): raw password
 
 	Returns:
+	-------
 		str: obfuscated password
 	"""
 	if len(password) < 7:
@@ -109,12 +117,14 @@ MFA = Path(f"{THISDIR}/mfa_sites.txt").read_text(encoding="utf-8").splitlines()
 
 
 def isMfaAvailable(urlstr: str) -> bool:
-	"""Identify if mfa is available using data from https://2fa.directory/
+	"""Identify if mfa is available using data from https://2fa.directory/.
 
 	Args:
+	----
 		urlstr (str): urlstr field
 
 	Returns:
+	-------
 		bool: isMfaAvailable
 	"""
 	return any(ele in urlstr for ele in MFA)

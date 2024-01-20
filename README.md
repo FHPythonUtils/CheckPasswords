@@ -12,22 +12,23 @@
 
 <img src="readme-assets/icons/name.png" alt="Project Icon" width="750">
 
-Uses pass_import to read a password manager source file storing raw data and infers data such as:
+Uses pass_import to read password manager source files, detecting duplicates, weak passwords,
+HTTP sites, and providing 2FA options.
 
-- zxcvbnScore
-- isPasswordDuplicate
-- passwordPrint
-- isHttp
-- isMfaAvailable
-- isMfaEnabled
+Details:
+The "checkpasswords" tool leverages pass_import to extract information from password manager source
+files. It automatically deduces various data points such as zxcvbnScore, password duplicity, HTTP
+site identification, and the availability/enabled status of multi-factor authentication (MFA).
 
-Used to:
+Functionality:
 
-- check for duplicate passwords
-- check for weak passwords
-- identify http sites
-- list available 2fa options using data from https://2fa.directory/
-- list emails to submit to HIBP or similar
+- Duplicate Password Check: Identify and flag duplicate passwords within the source file.
+- Weak Password Detection: Evaluate password strength using the zxcvbnScore algorithm.
+- HTTP Site Identification: Detect and list sites using HTTP.
+- 2FA Options Listing: Use data from https://2fa.directory/ to present available multi-factor
+  authentication options.
+- Emails for Security Checks: Compile a list of emails for submission to services like HIBP
+  (Have I Been Pwned) for security validation.
 
 <!-- omit in toc -->
 ## Table of Contents
@@ -51,6 +52,8 @@ Used to:
 - [How to run](#how-to-run)
 	- [Windows](#windows)
 	- [Linux/ MacOS](#linux-macos)
+- [Building](#building)
+- [Testing](#testing)
 - [Download Project](#download-project)
 	- [Clone](#clone)
 		- [Using The Command Line](#using-the-command-line)

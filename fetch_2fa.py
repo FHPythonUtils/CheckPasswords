@@ -1,17 +1,16 @@
-"""Find sites with 2fa from https://github.com/2factorauth/twofactorauth and populate checkpasswords/mfa_sites.txt
+"""Find sites with 2fa from https://github.com/2factorauth/twofactorauth and
+populate checkpasswords/mfa_sites.txt.
 """
 
+import contextlib
 from glob import glob
 from pathlib import Path
 
 import git.exc
 from git import Repo
 
-try:
+with contextlib.suppress(git.exc.GitCommandError):
 	Repo.clone_from("https://github.com/2factorauth/twofactorauth", "twofactorauth")
-except git.exc.GitCommandError as e:
-	print("clone failed")
-	print(e)
 mfaSites = [
 	Path(path).name.removesuffix(".json")
 	for path in glob("twofactorauth/entries/**/**.json", recursive=True)

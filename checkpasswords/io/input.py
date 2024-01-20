@@ -1,26 +1,30 @@
-"""Use pass_import to convert an ambiguous password manager source file to a list[Credentials]
+"""Use pass_import to convert an ambiguous password manager source file to a list[Credentials].
 """
+from __future__ import annotations
+
 import sys
 
 from pass_import.__main__ import pass_import
 from pass_import.auto import AutoDetect
 from pass_import.tools import Config
 
-from ..credentials import Credentials
+from checkpasswords.credentials import Credentials
 
 
 def passImport(path: str, manager: str | None = None) -> list[Credentials]:
-	"""Use pass_import to convert an ambiguous source file to a list[Credentials]
+	"""Use pass_import to convert an ambiguous source file to a list[Credentials].
 
 	Args:
+	----
 		path (str): path to password source file
 		manager (str, optional): specify a pasword manager if pass_import fails to identify it.
 		Defaults to None.
 
 	Returns:
+	-------
 		list[Credentials]: list of credentials used by the rest of checkpasswords
 	"""
-	# Use pass_import to convert an ambiguous source file to a list[Credentials]
+	# Use pass_import to convert an ambiguous source file to a list of Credentials
 	conf = Config()
 	conf.readconfig(
 		{
@@ -41,15 +45,14 @@ def passImport(path: str, manager: str | None = None) -> list[Credentials]:
 	data = pass_import(conf, passManager)
 
 	if data is None:
-		raise RuntimeError(
-			f"Failed to handle password file from {path} (password_manager={manager})"
-		)
+		msg = f"Failed to handle password file from {path} (password_manager={manager})"
+		raise RuntimeError(msg)
 
 	return transformPass(data)
 
 
 def transformPass(data: list[dict]) -> list[Credentials]:
-	"""Convert pass_import representation to checkpasswords representation (list[Credentials])
+	"""Convert pass_import representation to checkpasswords representation (list[Credentials]).
 
 
 	:param dict list[dict]: pass_import representation

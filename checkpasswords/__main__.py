@@ -1,20 +1,22 @@
-"""checkpasswords: Uses pass_import to read a password manager source file storing raw
-data and infers data such as:
+"""CheckPasswords Utility.
 
-- zxcvbnScore
-- isPasswordDuplicate
-- passwordPrint
-- isHttp
-- isMfaAvailable
-- isMfaEnabled
+Uses pass_import to read password manager source files, detecting duplicates, weak passwords,
+HTTP sites, and providing 2FA options.
 
-Used to:
+Details:
+The "checkpasswords" tool leverages pass_import to extract information from password manager source
+files. It automatically deduces various data points such as zxcvbnScore, password duplicity, HTTP
+site identification, and the availability/enabled status of multi-factor authentication (MFA).
 
-- check for duplicate passwords
-- check for weak passwords
-- identify http sites
-- list available 2fa options using data from https://2fa.directory/
-- list emails to submit to HIBP or similar
+Functionality:
+
+- Duplicate Password Check: Identify and flag duplicate passwords within the source file.
+- Weak Password Detection: Evaluate password strength using the zxcvbnScore algorithm.
+- HTTP Site Identification: Detect and list sites using HTTP.
+- 2FA Options Listing: Use data from https://2fa.directory/ to present available multi-factor
+  authentication options.
+- Emails for Security Checks: Compile a list of emails for submission to services like HIBP
+  (Have I Been Pwned) for security validation.
 """
 
 import argparse
@@ -26,8 +28,8 @@ from checkpasswords.io import input as input_
 from checkpasswords.io import output
 
 
-def main():
-	"""Main entry point."""
+def main() -> None:
+	"""Establish the main entry point."""
 	outputMap = {
 		"ansi": output.ansi,
 		"plain": output.plainText,
@@ -73,15 +75,11 @@ Input format. One of {MANAGERS.names()}""".replace(
 
 	args = parser.parse_args()
 	# File
-	filename = (
-		stdout
-		if args.file is None
-		else open(args.file, "w", encoding="utf-8")  # pylint: disable=consider-using-with
-	)
+	filename = stdout if args.file is None else open(args.file, "w", encoding="utf-8")
 
 	outputFunction = outputMap.get(args.output_format, output.ansi)
 	# no_colour
-	if outputFunction == output.ansi and args.no_colour:  # pylint: disable=comparison-with-callable
+	if outputFunction == output.ansi and args.no_colour:
 		outputFunction = output.plainText
 
 	print(
