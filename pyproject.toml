@@ -30,17 +30,16 @@ CheckPasswords = 'checkpasswords:cli'
 python = "^3.8"
 rich = "<14,>=13.7.0"
 zxcvbn-python = "<5,>=4.4.24"
-pass-import = "<4,>=3.4"
+pass-import = "<4,>=3.5"
 
 [tool.poetry.group.dev.dependencies]
-gitpython = "^3.1.31"
-tox = "^4.11.4"
-pytest = "^7.4.4"
+gitpython = "^3.1.42"
+tox = "^4.13.0"
+pytest = "^8.0.2"
 handsdown = "^2.1.0"
-coverage = "^7.4.0"
+coverage = "^7.4.3"
 ruff = "^0.1.13"
-blackt = "^2024"
-pyright = "^1.1.347"
+pyright = "^1.1.351"
 
 [build-system]
 requires = ["poetry-core"]
@@ -67,9 +66,11 @@ fixable = ["ALL"]
 [tool.ruff.lint.per-file-ignores]
 "**/{tests,docs,tools}/*" = ["D", "S101", "E402"]
 
-[tool.black]
-line-length = 100
-target-version = ["py38"]
+[tool.ruff.format]
+indent-style = "tab"
+docstring-code-format = true
+line-ending = "lf"
+
 
 [tool.pyright]
 venvPath = "."

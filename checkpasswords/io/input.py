@@ -23,6 +23,7 @@ def passImport(path: str, manager: str | None = None) -> list[Credentials]:
 	Returns:
 	-------
 		list[Credentials]: list of credentials used by the rest of checkpasswords
+
 	"""
 	# Use pass_import to convert an ambiguous source file to a list of Credentials
 	conf = Config()

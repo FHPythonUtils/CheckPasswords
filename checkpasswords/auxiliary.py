@@ -33,6 +33,7 @@ def isMfaEnabled(notes: str) -> bool:
 	Returns:
 	-------
 		bool: isMfaEnabled
+
 	"""
 
 	patterns = [
@@ -63,6 +64,7 @@ def isHttp(urlstr: str) -> bool:
 	Returns:
 	-------
 		bool: isHttp
+
 	"""
 	return "http:" in urlstr
 
@@ -84,6 +86,7 @@ def zxcvbnScore(password: str) -> ZxcvbnScore:
 	Returns:
 	-------
 		ZxcvbnScore: Return a dict of type ZxcvbnScore
+
 	"""
 	try:
 		scores = zxcvbn(password)
@@ -107,6 +110,7 @@ def passwordPrint(password: str) -> str:
 	Returns:
 	-------
 		str: obfuscated password
+
 	"""
 	if len(password) < 7:
 		return "*" * len(password)
@@ -126,5 +130,6 @@ def isMfaAvailable(urlstr: str) -> bool:
 	Returns:
 	-------
 		bool: isMfaAvailable
+
 	"""
 	return any(ele in urlstr for ele in MFA)

@@ -65,6 +65,7 @@ def applyPasswordDuplicate(credentials: list[Credentials]) -> None:
 	Args:
 	----
 		credentials (list[Credentials]): list of all credentials
+
 	"""
 	duplicates = [
 		k for k, v in Counter([x.password for x in credentials]).items() if v > 1 and len(k) > 0
@@ -83,6 +84,7 @@ def emails(credentials: list[Credentials]) -> set[str]:
 	Returns:
 	-------
 		set[str]: set of unique emails
+
 	"""
 	return {x.username.lower() for x in credentials if re.match(r"[^@]+@[^@]+\.[^@]+", x.username)}
 
@@ -98,6 +100,7 @@ def orderCredentials(credentials: list[Credentials]) -> list[Credentials]:
 	Returns:
 	-------
 		list[Credentials]: sorted credentials
+
 	"""
 	return sorted(credentials, key=lambda x: x.zxcvbnScore["crack_time"])
 
@@ -109,6 +112,7 @@ def generateTables(credentials: list[Credentials]) -> tuple[list[tuple[str, ...]
 	----
 		credentials (list[Credentials]): list of credentials parsed from some input file.
 		Such as a bitwarden export to CSV
+
 	"""
 	credentials = orderCredentials(credentials)
 	applyPasswordDuplicate(credentials)

@@ -1,7 +1,6 @@
 # Checkpasswords
 
-[Checkpasswords Index](../README.md#checkpasswords-index) /
-Checkpasswords
+[Checkpasswords Index](../README.md#checkpasswords-index) / Checkpasswords
 
 > Auto-generated documentation for [checkpasswords](../../../checkpasswords/__init__.py) module.
 

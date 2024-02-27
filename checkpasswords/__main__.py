@@ -49,17 +49,13 @@ def main() -> None:
 		"--output-format",
 		"-o",
 		help=f"""
-Output format. One of {list(outputMap)}. default=ansi""".replace(
-			"\n", ""
-		),
+Output format. One of {list(outputMap)}. default=ansi""".replace("\n", ""),
 	)
 	parser.add_argument(
 		"--input-format",
 		"-i",
 		help=f"""
-Input format. One of {MANAGERS.names()}""".replace(
-			"\n", ""
-		),
+Input format. One of {MANAGERS.names()}""".replace("\n", ""),
 	)
 	parser.add_argument(
 		"--file",

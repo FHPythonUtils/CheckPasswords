@@ -1,9 +1,6 @@
 # Input
 
-[Checkpasswords Index](../../README.md#checkpasswords-index) /
-[Checkpasswords](../index.md#checkpasswords) /
-[Io](./index.md#io) /
-Input
+[Checkpasswords Index](../../README.md#checkpasswords-index) / [Checkpasswords](../index.md#checkpasswords) / [Io](./index.md#io) / Input
 
 > Auto-generated documentation for [checkpasswords.io.input](../../../../checkpasswords/io/input.py) module.
 
@@ -13,19 +10,21 @@ Input
 
 ## passImport
 
-[Show source in input.py:12](../../../../checkpasswords/io/input.py#L12)
+[Show source in input.py:14](../../../../checkpasswords/io/input.py#L14)
 
-Use pass_import to convert an ambiguous source file to a list[Credentials]
+Use pass_import to convert an ambiguous source file to a list[Credentials].
 
 #### Arguments
 
-- `path` *str* - path to password source file
-- `manager` *str, optional* - specify a pasword manager if pass_import fails to identify it.
-Defaults to None.
+----
+ - `path` *str* - path to password source file
+ - `manager` *str, optional* - specify a pasword manager if pass_import fails to identify it.
+ Defaults to None.
 
 #### Returns
 
-- `list[Credentials]` - list of credentials used by the rest of checkpasswords
+-------
+ - `list[Credentials]` - list of credentials used by the rest of checkpasswords
 
 #### Signature
 
@@ -33,13 +32,17 @@ Defaults to None.
 def passImport(path: str, manager: str | None = None) -> list[Credentials]: ...
 ```
 
+#### See also
+
+- [Credentials](../credentials.md#credentials)
+
 
 
 ## transformPass
 
-[Show source in input.py:51](../../../../checkpasswords/io/input.py#L51)
+[Show source in input.py:55](../../../../checkpasswords/io/input.py#L55)
 
-Convert pass_import representation to checkpasswords representation (list[Credentials])
+Convert pass_import representation to checkpasswords representation (list[Credentials]).
 
 :param dict list[dict]: pass_import representation
 
@@ -53,3 +56,7 @@ checkpasswords representation
 ```python
 def transformPass(data: list[dict]) -> list[Credentials]: ...
 ```
+
+#### See also
+
+- [Credentials](../credentials.md#credentials)

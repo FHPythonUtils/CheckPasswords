@@ -1,13 +1,11 @@
 # Output
 
-[Checkpasswords Index](../../README.md#checkpasswords-index) /
-[Checkpasswords](../index.md#checkpasswords) /
-[Io](./index.md#io) /
-Output
+[Checkpasswords Index](../../README.md#checkpasswords-index) / [Checkpasswords](../index.md#checkpasswords) / [Io](./index.md#io) / Output
 
 > Auto-generated documentation for [checkpasswords.io.output](../../../../checkpasswords/io/output.py) module.
 
 - [Output](#output)
+  - [_stripAnsi](#_stripansi)
   - [ansi](#ansi)
   - [jsonF](#jsonf)
   - [markdown](#markdown)
@@ -15,20 +13,46 @@ Output
   - [raw](#raw)
   - [rawCsv](#rawcsv)
 
-## ansi
+## _stripAnsi
 
-[Show source in output.py:45](../../../../checkpasswords/io/output.py#L45)
+[Show source in output.py:35](../../../../checkpasswords/io/output.py#L35)
 
-Format to ansi
+Strip ansi codes from a given string.
 
 #### Arguments
 
-- `credentials` *list[Credentials]* - list of credentials parsed from some input file.
-Such as a bitwarden export to CSV
+----
+ - `string` *str* - string to strip codes from
 
 #### Returns
 
-- `str` - string to send to specified output in ansi format
+-------
+ - `str` - plaintext, utf-8 string (safe for writing to files)
+
+#### Signature
+
+```python
+def _stripAnsi(string: str) -> str: ...
+```
+
+
+
+## ansi
+
+[Show source in output.py:50](../../../../checkpasswords/io/output.py#L50)
+
+Format to ansi.
+
+#### Arguments
+
+----
+ - `credentials` *list[Credentials]* - list of credentials parsed from some input file.
+ Such as a bitwarden export to CSV
+
+#### Returns
+
+-------
+ - `str` - string to send to specified output in ansi format
 
 #### Signature
 
@@ -44,18 +68,20 @@ def ansi(credentials: list[Credentials]) -> str: ...
 
 ## jsonF
 
-[Show source in output.py:176](../../../../checkpasswords/io/output.py#L176)
+[Show source in output.py:196](../../../../checkpasswords/io/output.py#L196)
 
-Format to json
+Format to json.
 
 #### Arguments
 
-- `credentials` *list[Credentials]* - list of credentials parsed from some input file.
-Such as a bitwarden export to CSV
+----
+ - `credentials` *list[Credentials]* - list of credentials parsed from some input file.
+ Such as a bitwarden export to CSV
 
 #### Returns
 
-- `str` - string to send to specified output in json format
+-------
+ - `str` - string to send to specified output in json format
 
 #### Signature
 
@@ -71,18 +97,20 @@ def jsonF(credentials: list[Credentials]) -> str: ...
 
 ## markdown
 
-[Show source in output.py:133](../../../../checkpasswords/io/output.py#L133)
+[Show source in output.py:146](../../../../checkpasswords/io/output.py#L146)
 
-Format to markdown
+Format to markdown.
 
 #### Arguments
 
-- `credentials` *list[Credentials]* - list of credentials parsed from some input file.
-Such as a bitwarden export to CSV
+----
+ - `credentials` *list[Credentials]* - list of credentials parsed from some input file.
+ Such as a bitwarden export to CSV
 
 #### Returns
 
-- `str` - string to send to specified output in markdown format
+-------
+ - `str` - string to send to specified output in markdown format
 
 #### Signature
 
@@ -98,18 +126,20 @@ def markdown(credentials: list[Credentials]) -> str: ...
 
 ## plainText
 
-[Show source in output.py:120](../../../../checkpasswords/io/output.py#L120)
+[Show source in output.py:130](../../../../checkpasswords/io/output.py#L130)
 
-Format to plain text
+Format to plain text.
 
 #### Arguments
 
-- `credentials` *list[Credentials]* - list of credentials parsed from some input file.
-Such as a bitwarden export to CSV
+----
+ - `credentials` *list[Credentials]* - list of credentials parsed from some input file.
+ Such as a bitwarden export to CSV
 
 #### Returns
 
-- `str` - string to send to specified output in plain text format
+-------
+ - `str` - string to send to specified output in plain text format
 
 #### Signature
 
@@ -125,18 +155,20 @@ def plainText(credentials: list[Credentials]) -> str: ...
 
 ## raw
 
-[Show source in output.py:214](../../../../checkpasswords/io/output.py#L214)
+[Show source in output.py:241](../../../../checkpasswords/io/output.py#L241)
 
-Format to raw json
+Format to raw json.
 
 #### Arguments
 
-- `credentials` *list[Credentials]* - list of credentials parsed from some input file.
-Such as a bitwarden export to CSV
+----
+ - `credentials` *list[Credentials]* - list of credentials parsed from some input file.
+ Such as a bitwarden export to CSV
 
 #### Returns
 
-- `str` - string to send to specified output in raw json format
+-------
+ - `str` - string to send to specified output in raw json format
 
 #### Signature
 
@@ -152,18 +184,20 @@ def raw(credentials: list[Credentials]) -> str: ...
 
 ## rawCsv
 
-[Show source in output.py:227](../../../../checkpasswords/io/output.py#L227)
+[Show source in output.py:257](../../../../checkpasswords/io/output.py#L257)
 
-Format to raw csv
+Format to raw csv.
 
 #### Arguments
 
-- `credentials` *list[Credentials]* - list of credentials parsed from some input file.
-Such as a bitwarden export to CSV
+----
+ - `credentials` *list[Credentials]* - list of credentials parsed from some input file.
+ Such as a bitwarden export to CSV
 
 #### Returns
 
-- `str` - string to send to specified output in raw csv format
+-------
+ - `str` - string to send to specified output in raw csv format
 
 #### Signature
 

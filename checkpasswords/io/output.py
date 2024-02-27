@@ -42,6 +42,7 @@ def _stripAnsi(string: str) -> str:
 	Returns:
 	-------
 		str: plaintext, utf-8 string (safe for writing to files)
+
 	"""
 	return re.compile(r"\x1B(?:[@-Z\\-_]|\[[0-?]*[ -/]*[@-~])").sub("", string)
 
@@ -57,6 +58,7 @@ def ansi(credentials: list[Credentials]) -> str:
 	Returns:
 	-------
 		str: string to send to specified output in ansi format
+
 	"""
 	(
 		duplicatePasswordsTable,
@@ -136,6 +138,7 @@ def plainText(credentials: list[Credentials]) -> str:
 	Returns:
 	-------
 		str: string to send to specified output in plain text format
+
 	"""
 	return _stripAnsi(ansi(credentials))
 
@@ -151,6 +154,7 @@ def markdown(credentials: list[Credentials]) -> str:
 	Returns:
 	-------
 		str: string to send to specified output in markdown format
+
 	"""
 	strBuf = []
 	(
@@ -200,6 +204,7 @@ def jsonF(credentials: list[Credentials]) -> str:
 	Returns:
 	-------
 		str: string to send to specified output in json format
+
 	"""
 	(
 		duplicatePasswordsTable,
@@ -244,6 +249,7 @@ def raw(credentials: list[Credentials]) -> str:
 	Returns:
 	-------
 		str: string to send to specified output in raw json format
+
 	"""
 	return json.dumps({"info": INFO, "credentials": [x.__dict__ for x in credentials]}, indent="\t")
 
@@ -259,6 +265,7 @@ def rawCsv(credentials: list[Credentials]) -> str:
 	Returns:
 	-------
 		str: string to send to specified output in raw csv format
+
 	"""
 	string = StringIO()
 	data = [x.__dict__ for x in credentials]
