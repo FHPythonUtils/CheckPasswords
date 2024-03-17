@@ -1,5 +1,5 @@
-"""Use pass_import to convert an ambiguous password manager source file to a list[Credentials].
-"""
+"""Use pass_import to convert an ambiguous password manager source file to a list[Credentials]."""
+
 from __future__ import annotations
 
 import sys

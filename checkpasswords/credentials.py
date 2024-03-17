@@ -1,5 +1,5 @@
-"""Credentials class and associated methods.
-"""
+"""Credentials class and associated methods."""
+
 from __future__ import annotations
 
 import re

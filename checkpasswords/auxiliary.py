@@ -1,5 +1,5 @@
-"""Auxiliary functions used by the credentials class.
-"""
+"""Auxiliary functions used by the credentials class."""
+
 import math
 import re
 from pathlib import Path

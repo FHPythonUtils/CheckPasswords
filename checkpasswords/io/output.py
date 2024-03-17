@@ -16,6 +16,7 @@ To one of the following formats:
 - raw
 - raw-csv
 """
+
 from __future__ import annotations
 
 import csv

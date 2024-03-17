@@ -15,7 +15,7 @@
 
 ## _stripAnsi
 
-[Show source in output.py:35](../../../../checkpasswords/io/output.py#L35)
+[Show source in output.py:36](../../../../checkpasswords/io/output.py#L36)
 
 Strip ansi codes from a given string.
 
@@ -39,7 +39,7 @@ def _stripAnsi(string: str) -> str: ...
 
 ## ansi
 
-[Show source in output.py:50](../../../../checkpasswords/io/output.py#L50)
+[Show source in output.py:51](../../../../checkpasswords/io/output.py#L51)
 
 Format to ansi.
 
@@ -68,7 +68,7 @@ def ansi(credentials: list[Credentials]) -> str: ...
 
 ## jsonF
 
-[Show source in output.py:196](../../../../checkpasswords/io/output.py#L196)
+[Show source in output.py:197](../../../../checkpasswords/io/output.py#L197)
 
 Format to json.
 
@@ -97,7 +97,7 @@ def jsonF(credentials: list[Credentials]) -> str: ...
 
 ## markdown
 
-[Show source in output.py:146](../../../../checkpasswords/io/output.py#L146)
+[Show source in output.py:147](../../../../checkpasswords/io/output.py#L147)
 
 Format to markdown.
 
@@ -126,7 +126,7 @@ def markdown(credentials: list[Credentials]) -> str: ...
 
 ## plainText
 
-[Show source in output.py:130](../../../../checkpasswords/io/output.py#L130)
+[Show source in output.py:131](../../../../checkpasswords/io/output.py#L131)
 
 Format to plain text.
 
@@ -155,7 +155,7 @@ def plainText(credentials: list[Credentials]) -> str: ...
 
 ## raw
 
-[Show source in output.py:241](../../../../checkpasswords/io/output.py#L241)
+[Show source in output.py:242](../../../../checkpasswords/io/output.py#L242)
 
 Format to raw json.
 
@@ -184,7 +184,7 @@ def raw(credentials: list[Credentials]) -> str: ...
 
 ## rawCsv
 
-[Show source in output.py:257](../../../../checkpasswords/io/output.py#L257)
+[Show source in output.py:258](../../../../checkpasswords/io/output.py#L258)
 
 Format to raw csv.
 
